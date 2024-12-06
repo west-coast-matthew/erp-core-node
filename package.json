@@ -1,0 +1,23 @@
+{
+  "name": "erp-core-node",
+  "version": "1.0.0",
+  "description": "## Description This project storescore logic cusch as constants and entities used in my simulated manufacturing projects. These entities are centralized as they are common across several microservices.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thirdgear209/erp-core-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thirdgear209/erp-core-node/issues"
+  },
+  "homepage": "https://github.com/thirdgear209/erp-core-node#readme",
+  "dependencies": {
+    "sequelize": "^6.37.3"
+  }
+}
