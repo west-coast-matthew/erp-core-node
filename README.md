@@ -1,6 +1,6 @@
 ![Alt text](images/erp-core-node.png)
 
-#ERP Core (NodeJS)
+# ERP Core (NodeJS)
 
 ## Description
 This project storescore logic cusch as constants and entities used in my simulated manufacturing projects. These entities are centralized as they are common across several microservices.
