@@ -9,7 +9,7 @@ import FormFieldOption from "../types/form-field-option.type";
  * in a manner which is independent of the specific object implementation.
  * 
  */
-export default interface FormField{
+export interface FormField{
     name: string,   // Attribute reference on entity definition ()
     label: string,  // UI display on the phone, optional, if not provided, then we attempt to formulate on the name attribute. 
     description?: string, // Sometimes helpfull

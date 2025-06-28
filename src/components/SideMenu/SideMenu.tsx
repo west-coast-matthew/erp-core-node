@@ -9,7 +9,8 @@ import {
   CSidebarBrand,
 } from "@coreui/react";
 
-import { loadMenuConfig, NavItem } from "../../services/menu-service.service";
+import { loadMenuConfig } from "../../services/menu-service.service";
+import { NavItem } from "@/types/menu-nav-item.type";
 
 const config: NavItem[] = await loadMenuConfig();
 
