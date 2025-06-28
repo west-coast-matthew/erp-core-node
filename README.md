@@ -8,3 +8,12 @@ This project storescore logic cusch as constants and entities used in my simulat
 Common logic for the suite of modules that make up the entire inventory tracking system, an example of a production level real world application.
 
 You can find more details on my personal blog [https://www.matthewdalby.dev]()
+
+
+clear && npm run build
+npm publish --access public
+
+
+
+
+npm install @west-coast-matthew/erp-core-node

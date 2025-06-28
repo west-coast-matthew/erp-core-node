@@ -1,14 +1,16 @@
 {
-  "name": "erp-core-node",
-  "version": "1.0.0",
+  "name": "@west-coast-matthew/erp-core-node",
+  "version": "0.1.6",
   "description": "## Description This project storescore logic cusch as constants and entities used in my simulated manufacturing projects. These entities are centralized as they are common across several microservices.",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx tsc",
+    "test": "vitest",
+    "test-watch": "vitest --watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thirdgear209/erp-core-node.git"
+    "url": "git@github.com:west-coast-matthew/erp-core-node.git"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +20,27 @@
   },
   "homepage": "https://github.com/thirdgear209/erp-core-node#readme",
   "dependencies": {
-    "sequelize": "^6.37.3"
-  }
+    "@coreui/coreui": "^5.4.0",
+    "@coreui/icons": "^3.0.1",
+    "@coreui/icons-react": "^2.3.0",
+    "@coreui/react": "^5.7.0",
+    "@coreui/utils": "^2.0.2",
+    "react": "^19.1.0",
+    "typeorm": "^0.3.25",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.3",
+    "@types/winston": "^2.4.4",
+    "@vitejs/plugin-react": "^4.6.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.2.4"
+  },
+  "publishConfig": {
+    "registry": ""
+  },
+  "type": "module"
 }
