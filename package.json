@@ -1,12 +1,13 @@
 {
   "name": "@west-coast-matthew/erp-core-node",
-  "version": "0.1.8",
+  "version": "0.1.10",
   "description": "## Description This project storescore logic cusch as constants and entities used in my simulated manufacturing projects. These entities are centralized as they are common across several microservices.",
   "main": "./dist/index.js",
   "scripts": {
     "build": "npx tsc",
     "test": "vitest",
-    "test-watch": "vitest --watch"
+    "test-watch": "vitest --watch",
+    "publish": "npm publish --access public"
   },
   "repository": {
     "type": "git",
@@ -42,5 +43,8 @@
   "publishConfig": {
     "registry": ""
   },
-  "type": "module"
+  "type": "module",
+  "files":[
+    "dist"
+  ]
 }
