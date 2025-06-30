@@ -9,11 +9,9 @@ Common logic for the suite of modules that make up the entire inventory tracking
 
 You can find more details on my personal blog [https://www.matthewdalby.dev]()
 
-
-clear && npm run build
+## Building and deploying
+clear && yarn run build
 npm publish --access public
 
-
-
-
+## Installing this shared module with other projects
 npm install @west-coast-matthew/erp-core-node

@@ -1,1 +1,1 @@
-export * from './entity.constants';
+export * from './entity.constants.js';

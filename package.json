@@ -1,10 +1,12 @@
 {
   "name": "@west-coast-matthew/erp-core-node",
   "version": "0.1.10",
+  "license": "Apache-2.0",
   "description": "## Description This project storescore logic cusch as constants and entities used in my simulated manufacturing projects. These entities are centralized as they are common across several microservices.",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "npx tsc",
+    "build": "tsc",
     "test": "vitest",
     "test-watch": "vitest --watch",
     "publish": "npm publish --access public"
@@ -15,7 +17,6 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/thirdgear209/erp-core-node/issues"
   },
@@ -27,6 +28,7 @@
     "@coreui/react": "^5.7.0",
     "@coreui/utils": "^2.0.2",
     "react": "^19.1.0",
+    "tsup": "^8.5.0",
     "typeorm": "^0.3.25",
     "winston": "^3.17.0"
   },
@@ -44,7 +46,13 @@
     "registry": ""
   },
   "type": "module",
-  "files":[
+  "files": [
     "dist"
-  ]
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  }
 }

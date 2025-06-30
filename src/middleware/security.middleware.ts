@@ -3,7 +3,7 @@ const logger = require('../logging/index.logging');
 const errorConstants = require('../constants/error-status-codes.constants');
 import { Request, Response } from 'express';
 
-import { AUTH_HEADER } from '../constants/security.constants';
+import { AUTH_HEADER } from '../constants/security.constants.js';
 
 /**
  * Security middleware:

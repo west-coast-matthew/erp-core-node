@@ -9,19 +9,20 @@ import {
   CSidebarBrand,
 } from "@coreui/react";
 
-import { loadMenuConfig } from "../../services/menu-service.service";
+//import { loadMenuConfig } from "@/services/menu-service.service";
 import { NavItem } from "@/types/menu-nav-item.type";
 
-const config: NavItem[] = await loadMenuConfig();
+//const config: NavItem[] = await loadMenuConfig();
 
 export interface Props {
   handleSidebarToggle: (arg0: boolean) => void;
   toggleSidebar: () => void;
   sidebarShow: boolean;
+  menuItems?: NavItem[];
 }
 
-const renderNavItems = (items: NavItem[]) => {
-  return items.map((item, idx) => {
+const renderNavItems = (menuItems: NavItem[] = []) => {
+  return menuItems.map((item, idx) => {
     if (item.type === "title") {
       return <CNavTitle key={idx}>{item.name}</CNavTitle>;
     }
@@ -50,6 +51,7 @@ export const SideMenu: FC<Props> = ({
   sidebarShow,
   handleSidebarToggle,
   toggleSidebar,
+  menuItems = [],
 }) => {
   //console.log("api menu config: ", await loadMenuConfig());
 
@@ -65,7 +67,7 @@ export const SideMenu: FC<Props> = ({
           <span className="h4"></span>
         </CSidebarBrand>
         <CSidebar>
-          <CSidebarNav>{renderNavItems(config)}</CSidebarNav>
+          <CSidebarNav>{renderNavItems(menuItems)}</CSidebarNav>
         </CSidebar>
         <CSidebarToggler
           className="d-none d-lg-flex"
