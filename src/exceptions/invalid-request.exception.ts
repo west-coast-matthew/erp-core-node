@@ -7,12 +7,12 @@ import { HTTP_STATUS_CODE_BAD_REQUEST } from "@/constants/http-status-codes.cons
 /**
  * Exception intended for cases where a general invalid request is made by the client. Usually intended for business validation exceptions.
  */
-class EntityNotFoundError extends BaseApplicationException{
+class InvalidRequestException extends BaseApplicationException{
     
     constructor(message:string){
         super(message,AppErrorCodes.BAD_REQUEST, HTTP_STATUS_CODE_BAD_REQUEST, "Invalid request");
     }
 }
 
-module.exports = EntityNotFoundError;
+export default InvalidRequestException;
 

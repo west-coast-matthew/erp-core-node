@@ -12,4 +12,4 @@ class EntityNotFoundError extends BaseApplicationException{
     }
 }
 
-module.exports = EntityNotFoundError;
+export default EntityNotFoundError

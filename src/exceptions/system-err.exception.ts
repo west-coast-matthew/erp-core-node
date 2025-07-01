@@ -7,12 +7,12 @@ import { HTTP_STATUS_CODE_BAD_REQUEST } from "@/constants/http-status-codes.cons
 /**
  * Generic handler for general exceptons.
  */
-class EntityNotFoundError extends BaseApplicationException{
+class SystemErrException extends BaseApplicationException{
     
     constructor(message:string){
         super(message,AppErrorCodes.ERR_CODE_SYSTEM_ERR, HTTP_STATUS_CODE_BAD_REQUEST, "System level exception");
     }
 }
 
-module.exports = EntityNotFoundError;
+export default SystemErrException;
 
