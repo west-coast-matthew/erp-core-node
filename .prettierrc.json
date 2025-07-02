@@ -1,0 +1,7 @@
+{
+  "semi": true, // Adds semicolons at the end of statements
+  "singleQuote": true, // Uses single quotes for strings
+  "jsxSingleQuote": true, // Uses single quotes for JSX attributes
+  "trailingComma": "es5", // Adds trailing commas where valid in ES5
+  "endOfLine": "auto" // Sets the line ending style to automatically detect
+}

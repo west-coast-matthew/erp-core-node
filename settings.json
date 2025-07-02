@@ -1,0 +1,17 @@
+{
+  "editor.tabSize": 2, // Sets the tab size to 2 spaces for consistent indentation
+  "editor.formatOnSaveMode": "modificationsIfAvailable", // Format only modified lines on save for faster formatting
+  "editor.formatOnSave": true, // Automatically formats the code when you save the file
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // Sets Prettier as the default formatter
+  "prettier.documentSelectors": ["*.{tsx,ts}", "*.{jsx,js}"], // Configures Prettier to format TypeScript and JavaScript files
+  "eslint.validate": [ // Enables ESLint validation for these file types
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.codeActionsOnSave": { // Automatically applies ESLint fixes when saving
+    "source.fixAll.eslint": true
+  },
+  "editor.rulers": [{"column": 10, "color": "#9f0af5"}] 
+}
