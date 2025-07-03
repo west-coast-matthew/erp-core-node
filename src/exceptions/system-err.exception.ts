@@ -10,7 +10,8 @@ import { HTTP_STATUS_CODE_BAD_REQUEST } from "@/constants/http-status-codes.cons
 class SystemErrException extends BaseApplicationException{
     
     constructor(message:string){
-        super(message,AppErrorCodes.ERR_CODE_SYSTEM_ERR, HTTP_STATUS_CODE_BAD_REQUEST, "System level exception");
+        super(message,AppErrorCodes.ERR_CODE_SYSTEM_ERR, HTTP_STATUS_CODE_BAD_REQUEST, 
+            "System level exception");
     }
 }
 

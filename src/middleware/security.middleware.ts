@@ -8,7 +8,10 @@ import { AUTH_HEADER } from '../constants/security.constants.js';
 /**
  * Security middleware:
  * 
- * Example implementation of applying security at a global level. Current implmentation is for illustration purposes only, the idea here is that the actual security implementation would be 'pluggable' with an external system. For this excersize, we simply check for a header value with a hard coded token.
+ * Example implementation of applying security at a global level. Current implmentation is for 
+ * illustration purposes only, the idea here is that the actual security implementation would be 
+ * 'pluggable' with an external system. For this excersize, we simply check for a header value with 
+ * a hard coded token.
  * 
  * curl -v --header 'Authorization: 12345' http://localhost:3002/tanks
  * 

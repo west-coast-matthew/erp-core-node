@@ -5,7 +5,8 @@ import { BaseApplicationException } from "./base-application.exception";
 import { HTTP_STATUS_CODE_BAD_REQUEST } from "@/constants/http-status-codes.constant";
 
 /**
- * Exception intended for cases where a general invalid request is made by the client. Usually intended for business validation exceptions.
+ * Exception intended for cases where a general invalid request is made by the client. Usually 
+ * intended for business validation exceptions.
  */
 class InvalidRequestException extends BaseApplicationException{
     

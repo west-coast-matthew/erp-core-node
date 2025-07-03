@@ -11,8 +11,10 @@
         ),
         transports: [
             new transports.Console(), // Log to the console
-            new transports.File({ filename: 'logs/error.log', level: 'error' }), // Log errors to a file
-            new transports.File({ filename: 'logs/combined.log' }) // Log all levels to a combined file
+            new transports.File({ filename: 'logs/error.log', level: 'error' }), // Log errors 
+            // to a file
+            new transports.File({ filename: 'logs/combined.log' }) // Log all levels to a combined 
+            // file
         ],
         exitOnError: false, // Do not exit the process on handled exceptions
     });
