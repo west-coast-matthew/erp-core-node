@@ -8,13 +8,11 @@ import { HTTP_STATUS_CODE_BAD_REQUEST } from "@/constants/http-status-codes.cons
  * Exception intended for cases where a request to create or update an entity fails due to business 
  * validation logic.
  */
-class EntityValidationException extends BaseApplicationException{
+export class EntityValidationException extends BaseApplicationException{
     
     constructor(message:string){
         super(message,AppErrorCodes.ENTITY_VALIDATION_ERR, HTTP_STATUS_CODE_BAD_REQUEST, 
             "Entity validation failure");
     }
 }
-
-export default EntityValidationException;
 

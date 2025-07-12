@@ -1,34 +1,32 @@
 {
   "compilerOptions": {
-    //"composite": true,
-    "declaration": true,
-    "declarationMap": true,
+    "outDir": "./dist", // Defines where the compiled JavaScript files will be placed                                  
+    "rootDir": "./src", // The root directory of the source files    
+    "declaration": true, // Generates corresponding '.d.ts' files for TypeScript files      
+    "sourceMap": true, // Generates corresponding '.map' files for debugging purposes                      
+    "sourceRoot": "./src",                          
+    //"tsBuildInfoFile": "./dist/.tsbuildinfo",         
+    "declarationMap": true, // Generates a map file for declarations, useful for debugging
     "emitDeclarationOnly": false,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "esnext",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
+    "esModuleInterop": true, // Enables emit interoperability between CommonJS and ES Modules 
+    "target": "es2016",                                 
+    "module": "commonjs",  
+    "jsx": "react-jsx",                             
+    "noEmit": false,                                   
+    "forceConsistentCasingInFileNames": true,           
+    "strict": true,                                     
     "skipLibCheck": true,
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": false,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": false,
-    "jsx": "react-jsx",
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "baseUrl": ".",
+    "moduleResolution": "node", // Resolves modules using Node.js resolution strategy
     "paths": {
-      "@/*": ["./src/*"]
-    },
-    "types": ["vitest/globals"],
-    "outDir": "./dist",          // compiled files go here
-    "rootDir": "./src",
+      "@/*": ["./src/*"],
+      "@config/*": ["./src/config/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@middleware/*": ["./src/middleware/*"],
+      "@components/*": ["./src/components/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@exceptions/*": ["./src/exceptions/*"],
+      "@services/*": ["./src/services/*"],
+    }       
   },
-  "include": ["src/**/*"],  // ✅ Include ALL .ts/.tsx files
-  "exclude": ["dist", "node_modules"]
+  "include": ["src/**/*"]
 }

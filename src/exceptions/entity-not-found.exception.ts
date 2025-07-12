@@ -8,11 +8,9 @@ import { HTTP_STATUS_CODE_NOT_FOUND } from "@/constants/http-status-codes.consta
  * client in order to determine that the request in fact was routed to a valid rAPI endpoint, 
  * however the requested entity (usually referenced by PK) simply does not exist. 
  */
-class EntityNotFoundException extends BaseApplicationException{
+export class EntityNotFoundException extends BaseApplicationException{
     
     constructor(message:string){
         super(message,AppErrorCodes.ENTITY_NOT_FOUND, HTTP_STATUS_CODE_NOT_FOUND, "Entity not found");
     }
 }
-
-export default EntityNotFoundException;

@@ -7,13 +7,10 @@ import { HTTP_STATUS_CODE_BAD_REQUEST } from "@/constants/http-status-codes.cons
 /**
  * Generic handler for general exceptons.
  */
-class SystemErrException extends BaseApplicationException{
+export class SystemErrException extends BaseApplicationException{
     
     constructor(message:string){
         super(message,AppErrorCodes.ERR_CODE_SYSTEM_ERR, HTTP_STATUS_CODE_BAD_REQUEST, 
             "System level exception");
     }
 }
-
-export default SystemErrException;
-

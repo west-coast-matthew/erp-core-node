@@ -1,6 +1,7 @@
-const {isTokenValid} = require('../services/security.service');
-const logger = require('../logging/index.logging');
-const errorConstants = require('../constants/error-status-codes.constants');
+import  {isTokenValid} from '@services/security.service';
+import logger from '@config/logger';
+import {AppErrorCodes} from '@constants/error-status-codes.constants';
+
 import { Request, Response } from 'express';
 
 import { AUTH_HEADER } from '../constants/security.constants.js';
@@ -34,9 +35,9 @@ const securityMiddleware = function(req: Request, res: Response, next:any){
 
 	if(!authToken){
         console.log('no auth tokens!!!!');
-        console.log(`headers: ${errorConstants.CUSTOM_ERROR_CODE} ${errorConstants.NOT_LOGGED_IN}`);
+        console.log(`headers: ${AppErrorCodes.CUSTOM_ERROR_CODE} ${AppErrorCodes.NOT_LOGGED_IN}`);
         res.status(401);
-        res.header(errorConstants.CUSTOM_ERROR_CODE, errorConstants.NOT_LOGGED_IN);
+        res.header(AppErrorCodes.CUSTOM_ERROR_CODE, AppErrorCodes.NOT_LOGGED_IN);
         res.send({});
         return;
 	}
@@ -50,7 +51,7 @@ const securityMiddleware = function(req: Request, res: Response, next:any){
         
         console.log(`security token is not valid.....`);
         res.status(401);
-        //res.setHeader(AppErrorCodesCUSTOM_ERROR_CODE, INVALID_SECURITY_TOKEN);
+        //res.setHeader(AppErrorCodes.CUSTOM_ERROR_CODE, INVALID_SECURITY_TOKEN);
 		res.send({});
         return;
     }

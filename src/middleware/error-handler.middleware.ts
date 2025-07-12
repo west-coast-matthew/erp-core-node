@@ -1,4 +1,5 @@
 import { BaseApplicationException } from "@/exceptions/base-application.exception";
+import logger from "@/config/logger";
 import { Response } from "express";
 
 /**
@@ -19,6 +20,9 @@ const errorHandlerMiddleware = function(error: Error, res: Response ){
             res.set('message',(error as BaseApplicationException).message);
             res.status((error as BaseApplicationException).httpStatusCode);
 
+            console.warn("Application Exception: ", error.message);
+            logger.error("Application Exception: ", error);
+            
             res.send("");
         }
 

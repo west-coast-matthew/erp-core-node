@@ -1,3 +1,3 @@
 /** Header name for custom error codes sent to client. */
-exports.CUSTOM_ERROR_CODE = 'errorCode';
-exports.ERROR_MESSAGE = 'errorMsg';
+export const CUSTOM_ERROR_CODE = 'errorCode';
+export const ERROR_MESSAGE = 'errorMsg';

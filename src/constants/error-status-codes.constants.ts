@@ -7,4 +7,5 @@ export enum AppErrorCodes{
     ENTITY_VALIDATION_ERR = 'ERP-1005',
     BAD_REQUEST = 'ERP-1006',
     CUSTOM_ERROR_CODE = 'Error-Code',
+    INITIALIZATION_ERROR = 'ERP-1007'
 }
