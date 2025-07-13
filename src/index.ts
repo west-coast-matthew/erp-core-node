@@ -9,8 +9,6 @@
  * 
  */
 
-export * from "@components/SideMenu/SideMenu";
-
 // Util functions
 export * from "@utils/string.utils";
 

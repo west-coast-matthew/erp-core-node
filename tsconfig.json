@@ -28,7 +28,10 @@
       "@exceptions/*": ["./src/exceptions/*"],
       "@services/*": ["./src/services/*"],
     },
-    "types": ["node", "express"],         
+    "types": ["node", "express"],      
+    "experimentalDecorators": true, // Req for type orm
+    "emitDecoratorMetadata": true, // Req for type orm
+    "strictPropertyInitialization": false, // Req for type orm   
   },
   "include": ["src/**/*"]
 }
