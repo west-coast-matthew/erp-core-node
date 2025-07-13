@@ -1,0 +1,93 @@
+Awesome — moving to tsup is a great call for packaging shared libraries. It's fast, tree-shake-safe, and outputs dual formats (esm, cjs) along with .d.ts types in one go — all with minimal config.
+
+npm install --save-dev tsup
+
+"scripts": {
+  "build": "rimraf dist && tsup src/index.ts --format esm,cjs --dts --clean",
+  ...
+}
+
+
+Update Your package.json Entry Points
+
+{
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  }
+}
+
+
+Optional: Create a tsup.config.ts (optional, but more scalable)
+
+// tsup.config.ts
+import { defineConfig } from 'tsup';
+
+export default defineConfig({
+  entry: ['src/index.ts'],
+  format: ['esm', 'cjs'],
+  dts: true,
+  sourcemap: true,
+  clean: true,
+  target: 'es2020',
+});
+
+
+"build": "tsup"
+
+
+Clean Up tsconfig.json for Compatibility
+
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "outDir": "dist", // not actually used by tsup, but safe to leave
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "types": ["node"]
+  },
+  "include": ["src"],
+  "exclude": ["dist", "node_modules"]
+}
+
+With emitDeclarationOnly, you can run tsc only for types (tsup handles JS build).
+
+
+...
+
+npm run build
+
+
+Check the dist/ folder. You should see:
+
+pgsql
+Copy
+Edit
+dist/
+  index.cjs        <-- CommonJS output
+  index.mjs        <-- ESM output
+  index.d.ts       <-- Types
+
+
+  Final Structure Summary
+
+
+  import { InitializationException } from '@west-coast-matthew/erp-core-node';
+
+  "And it will Just Work™ whether their project uses CommonJS or ESM.
+
+"

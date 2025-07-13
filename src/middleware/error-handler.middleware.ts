@@ -1,6 +1,6 @@
 import { BaseApplicationException } from "@/exceptions/base-application.exception";
 import logger from "@/config/logger";
-import { Response } from "express";
+import { Request, Response, NextFunction, ErrorRequestHandler } from 'express';
 
 /**
  * 
@@ -11,22 +11,23 @@ import { Response } from "express";
  * @param {*} res 
  * @param {*} next 
  */
-const errorHandlerMiddleware = function(error: Error, res: Response ){
-    
-    if(error){
-        if(error instanceof BaseApplicationException){
-            res.set('app-err-code',(error as BaseApplicationException).appCode);
-            res.set('default-message',(error as BaseApplicationException).defaultMessage);
-            res.set('message',(error as BaseApplicationException).message);
-            res.status((error as BaseApplicationException).httpStatusCode);
+export const errorHandlerMiddleware: ErrorRequestHandler = (
+  error:Error,
+  _req: Request,
+  res: Response,
+  _next: NextFunction
+) => {
+  if (error instanceof BaseApplicationException) {
+    res.setHeader('app-err-code', error.appCode);
+    res.setHeader('default-message', error.defaultMessage);
+    res.setHeader('message', error.message);
+    res.status(error.httpStatusCode);
 
-            console.warn("Application Exception: ", error.message);
-            logger.error("Application Exception: ", error);
-            
-            res.send("");
-        }
+    console.warn("Application Exception: ", error.message);
+    logger.error("Application Exception: ", error);
 
-    }
+    res.send();
+  } else {
+    res.status(500).send();
+  }
 };
-
-module.exports = errorHandlerMiddleware;

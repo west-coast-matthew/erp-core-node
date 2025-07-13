@@ -17,6 +17,7 @@
     "strict": true,                                     
     "skipLibCheck": true,
     "moduleResolution": "node", // Resolves modules using Node.js resolution strategy
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@/*": ["./src/*"],
       "@config/*": ["./src/config/*"],
@@ -26,7 +27,8 @@
       "@constants/*": ["./src/constants/*"],
       "@exceptions/*": ["./src/exceptions/*"],
       "@services/*": ["./src/services/*"],
-    }       
+    },
+    "types": ["node", "express"],         
   },
   "include": ["src/**/*"]
 }
