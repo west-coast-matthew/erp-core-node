@@ -16,6 +16,9 @@ export interface CreateDataSourceParams {
 }
 
 export const createDataSource = (params: CreateDataSourceParams): DataSource => {
+  
+  console.log(`core: connecting to db host: `+ params.host);
+  console.log(`core: connecting to db: `+ params.username);
   const options: DataSourceOptions = {
     type: 'mariadb',
     host: params.host,

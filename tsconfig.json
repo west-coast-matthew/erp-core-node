@@ -27,6 +27,7 @@
       "@constants/*": ["./src/constants/*"],
       "@exceptions/*": ["./src/exceptions/*"],
       "@services/*": ["./src/services/*"],
+      "@types/*": ["./src/types/*"],
     },
     "types": ["node", "express"],      
     "experimentalDecorators": true, // Req for type orm

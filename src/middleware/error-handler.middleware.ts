@@ -1,5 +1,5 @@
 import { BaseApplicationException } from "@/exceptions/base-application.exception";
-import logger from "@/config/logger";
+import {logger} from "@/config/logger";
 import { Request, Response, NextFunction, ErrorRequestHandler } from 'express';
 
 /**

@@ -1,4 +1,4 @@
-export default interface FormFieldOption{
+export interface FormFieldOption{
     label: string, 
     value: string
 }

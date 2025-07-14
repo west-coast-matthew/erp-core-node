@@ -1,0 +1,2 @@
+// index.d.ts (at project root, not in dist/)
+export * from "./dist/index.d.ts";

@@ -1,5 +1,9 @@
-import { FORM_FIELD_TYPES } from "@/constants/form.constants";
-import {FormFieldOption} from "./form-field-option.type";
+/**
+ * 
+ */
+enum FORM_FIELD_TYPES {
+    TEXT_INPUT="text"
+}
 
 /**
  * FormField:
@@ -18,6 +22,14 @@ export interface FormField{
     options?: FormFieldOption[], // Only relevant for multiple selection options
     length?: number, // Limits length on 
     value?: string, // Pre-existing value, if any
-    type: FORM_FIELD_TYPES, // Reference to the form fild representation
+    type: FORM_FIELD_TYPES, // Reference to the form field representation
     validationMsg?: string, // Presented if invalid input supplied.
+}
+
+/**
+ * 
+ */
+export interface FormFieldOption{
+    label: string, 
+    value: string
 }

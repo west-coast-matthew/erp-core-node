@@ -1,7 +1,7 @@
     // src/utils/logger.ts
     import winston,{createLogger, format, transports } from 'winston';
 
-    const logger = createLogger({
+    export const logger = createLogger({
         level: 'info', // Set the minimum logging level
         format: format.combine(
             format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
@@ -20,4 +20,4 @@
         exitOnError: false, // Do not exit the process on handled exceptions
     });
 
-    export default logger;
+logger.info('mdalby');
